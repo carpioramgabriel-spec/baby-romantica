@@ -2,13 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#ff477e">
 
 <title>Baby ❤️</title>
 
 <style>
-
 *{
 box-sizing:border-box;
 }
@@ -17,822 +16,395 @@ body{
 margin:0;
 min-height:100vh;
 overflow-x:hidden;
-
-font-family:
--apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
-sans-serif;
-
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 color:white;
-
 display:flex;
 justify-content:center;
 align-items:center;
 
 background:
-radial-gradient(
-circle at 20% 20%,
-#ff9abb 0%,
-transparent 35%
-),
-
-radial-gradient(
-circle at 80% 80%,
-#9b6cff 0%,
-transparent 35%
-),
-
-linear-gradient(
-135deg,
-#ff477e,
-#8b5cf6
-);
+radial-gradient(circle at 20% 20%,#ff9abb 0%,transparent 35%),
+radial-gradient(circle at 80% 80%,#9b6cff 0%,transparent 35%),
+linear-gradient(135deg,#ff477e,#8b5cf6);
 
 background-size:180% 180%;
-
-animation:
-fondo 12s ease infinite;
+animation:fondo 12s ease infinite;
 }
-
 
 @keyframes fondo{
-
-0%{
-background-position:0% 50%;
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
 }
-
-50%{
-background-position:100% 50%;
-}
-
-100%{
-background-position:0% 50%;
-}
-
-}
-
 
 .contenedor{
-
 width:92%;
-
 max-width:430px;
-
 position:relative;
-
 z-index:5;
-
 }
 
-
 .tarjeta{
-
 padding:35px 25px;
-
 text-align:center;
 
-background:
-rgba(255,255,255,.16);
-
-border:
-1px solid rgba(255,255,255,.3);
-
+background:rgba(255,255,255,.16);
+border:1px solid rgba(255,255,255,.3);
 border-radius:32px;
 
-backdrop-filter:
-blur(25px);
-
--webkit-backdrop-filter:
-blur(25px);
+backdrop-filter:blur(25px);
+-webkit-backdrop-filter:blur(25px);
 
 box-shadow:
-
-0 25px 70px
-rgba(0,0,0,.25),
-
-inset 0 1px 1px
-rgba(255,255,255,.25);
-
-animation:
-entrada .8s ease;
-
+0 25px 70px rgba(0,0,0,.25),
+inset 0 1px 1px rgba(255,255,255,.25);
 }
-
-
-@keyframes entrada{
-
-from{
-
-opacity:0;
-
-transform:
-translateY(30px)
-scale(.95);
-
-}
-
-to{
-
-opacity:1;
-
-transform:
-translateY(0)
-scale(1);
-
-}
-
-}
-
 
 .corazon{
-
 font-size:72px;
-
 display:inline-block;
-
-animation:
-latido 1.4s infinite;
-
-filter:
-drop-shadow(
-0 8px 15px
-rgba(0,0,0,.2)
-);
-
+animation:latido 1.4s infinite;
 }
-
 
 @keyframes latido{
-
-0%,100%{
-
-transform:
-scale(1);
-
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.15)}
 }
-
-50%{
-
-transform:
-scale(1.15);
-
-}
-
-}
-
 
 h1{
-
-margin:
-15px 0 8px;
-
+margin:15px 0 8px;
 font-size:38px;
-
-font-weight:800;
-
 }
-
 
 .descripcion{
-
-margin:
-0 0 25px;
-
+margin:0 0 25px;
 opacity:.9;
-
-font-size:16px;
-
 }
-
 
 .botones{
-
 display:flex;
-
 flex-direction:column;
-
 gap:12px;
-
 }
-
 
 button{
-
 width:100%;
-
 padding:16px;
-
 border:none;
-
 border-radius:20px;
-
 font-size:18px;
-
 font-weight:700;
-
 cursor:pointer;
-
-transition:
-transform .2s,
-box-shadow .2s;
-
+transition:transform .2s;
 }
-
 
 button:active{
-
-transform:
-scale(.95);
-
+transform:scale(.95);
 }
-
 
 .si{
-
 color:#ff477e;
-
 background:white;
-
-box-shadow:
-0 8px 25px
-rgba(255,255,255,.25);
-
 }
-
 
 .no{
-
 color:white;
-
-background:
-rgba(0,0,0,.18);
-
-border:
-1px solid
-rgba(255,255,255,.2);
-
+background:rgba(0,0,0,.18);
+border:1px solid rgba(255,255,255,.2);
 }
-
 
 .baby{
-
 display:none;
-
 margin-top:20px;
-
 color:white;
-
-background:
-linear-gradient(
-90deg,
-#ff477e,
-#ff6fa0,
-#a855f7
-);
-
-box-shadow:
-0 10px 30px
-rgba(255,71,126,.35);
-
+background:linear-gradient(90deg,#ff477e,#ff6fa0,#a855f7);
 }
-
 
 #mensaje{
-
 margin-top:20px;
-
 min-height:25px;
-
 font-size:17px;
-
 font-weight:600;
-
 }
 
-
-#zonaExtra{
-
+#zonaCompartir{
 display:none;
-
 margin-top:25px;
-
 }
 
+.aviso{
+padding:18px;
+border-radius:20px;
+background:rgba(255,255,255,.12);
+font-size:15px;
+line-height:1.5;
+}
 
-.boton-extra{
+.aceptar{
+margin-top:14px;
+color:#ff477e;
+background:white;
+}
 
+.cancelar{
 margin-top:10px;
-
 color:white;
-
-background:
-rgba(255,255,255,.16);
-
-border:
-1px solid
-rgba(255,255,255,.25);
-
+background:rgba(0,0,0,.18);
 }
 
+#fotoInput{
+display:none;
+}
+
+#estado{
+margin-top:15px;
+font-size:15px;
+}
 
 #preview{
-
 display:none;
-
 width:100%;
-
 margin-top:15px;
-
 border-radius:20px;
-
-box-shadow:
-0 10px 30px
-rgba(0,0,0,.25);
-
 }
-
-
-#audio{
-
-display:none;
-
-width:100%;
-
-margin-top:15px;
-
-}
-
-
-.corazon-flotante{
-
-position:fixed;
-
-bottom:-50px;
-
-pointer-events:none;
-
-z-index:1;
-
-animation:
-subir linear forwards;
-
-}
-
-
-@keyframes subir{
-
-0%{
-
-transform:
-translateY(0)
-rotate(0deg)
-scale(.8);
-
-opacity:0;
-
-}
-
-15%{
-
-opacity:.9;
-
-}
-
-100%{
-
-transform:
-translateY(-115vh)
-rotate(360deg)
-scale(1.2);
-
-opacity:0;
-
-}
-
-}
-
 
 .brillo{
-
 position:fixed;
-
 width:5px;
-
 height:5px;
-
 border-radius:50%;
-
 background:white;
-
-box-shadow:
-
-0 0 10px white,
-0 0 20px white;
-
-opacity:.6;
-
-animation:
-brillar 3s ease-in-out infinite;
-
-pointer-events:none;
-
+box-shadow:0 0 10px white,0 0 20px white;
+animation:brillar 3s infinite;
 }
-
 
 @keyframes brillar{
+0%,100%{opacity:0}
+50%{opacity:.9}
+}
 
-0%,100%{
+.corazon-flotante{
+position:fixed;
+bottom:-50px;
+pointer-events:none;
+z-index:1;
+animation:subir linear forwards;
+}
 
+@keyframes subir{
+0%{
+transform:translateY(0) rotate(0deg);
 opacity:0;
-
-transform:
-scale(.5);
-
 }
-
-50%{
-
-opacity:.9;
-
-transform:
-scale(1.5);
-
+15%{opacity:.9}
+100%{
+transform:translateY(-115vh) rotate(360deg);
+opacity:0;
 }
-
 }
-
-
-@media(max-width:380px){
-
-.tarjeta{
-
-padding:
-28px 20px;
-
-}
-
-h1{
-
-font-size:32px;
-
-}
-
-.corazon{
-
-font-size:60px;
-
-}
-
-}
-
 </style>
 </head>
 
-
 <body>
 
-
-<div
-class="brillo"
-style="top:12%;left:18%;">
-</div>
-
-
-<div
-class="brillo"
-style="top:25%;left:80%;">
-</div>
-
-
-<div
-class="brillo"
-style="top:70%;left:15%;">
-</div>
-
-
-<div
-class="brillo"
-style="top:82%;left:75%;">
-</div>
-
-
+<div class="brillo" style="top:12%;left:18%"></div>
+<div class="brillo" style="top:25%;left:80%"></div>
+<div class="brillo" style="top:70%;left:15%"></div>
+<div class="brillo" style="top:82%;left:75%"></div>
 
 <div class="contenedor">
 
 <div class="tarjeta">
 
+<div class="corazon">❤️</div>
 
-<div class="corazon">
-
-❤️
-
-</div>
-
-
-<h1>
-
-¿Me quieres?
-
-</h1>
-
+<h1>¿Me quieres?</h1>
 
 <p class="descripcion">
-
 Solo tengo una pequeña pregunta para ti...
-
 </p>
-
-
 
 <div class="botones">
 
-
-<button
-class="si"
-onclick="responderSi()">
-
+<button class="si" onclick="responderSi()">
 Sí ❤️
-
 </button>
 
-
-<button
-class="no"
-onclick="responderNo()">
-
+<button class="no" onclick="responderNo()">
 No 😭
-
 </button>
-
 
 </div>
-
-
 
 <button
 id="baby"
 class="baby"
-onclick="continuar()">
-
+onclick="mostrarAviso()">
 Baby ❤️
-
 </button>
-
-
 
 <div id="mensaje"></div>
 
+<div id="zonaCompartir">
 
+<div class="aviso">
 
-<div id="zonaExtra">
+💕 Si quieres compartir conmigo una foto y tu ubicación,
+puedes aceptar.
 
+<br><br>
 
-<hr
-style="
-border-color:
-rgba(255,255,255,.2);
-">
+La ubicación y la foto solo se enviarán después de que
+aceptes.
 
-
-<p>
-
-💕 Si quieres compartir algo conmigo...
-
-</p>
-
-
+</div>
 
 <button
-class="boton-extra"
-onclick="abrirCamara()">
-
-📸 Tomar una foto
-
+class="aceptar"
+onclick="aceptarCompartir()">
+Aceptar ❤️
 </button>
 
+<button
+class="cancelar"
+onclick="cancelarCompartir()">
+Cancelar
+</button>
 
 <input
-id="archivoFoto"
+id="fotoInput"
 type="file"
 accept="image/*"
 capture="environment"
-style="display:none"
-onchange="mostrarFoto(event)"
+onchange="fotoSeleccionada(event)"
 >
 
+<div id="estado"></div>
 
-<img
-id="preview"
-alt="Vista previa"
->
-
-
-<audio
-id="audio"
-controls>
-</audio>
-
-
-</div>
-
+<img id="preview">
 
 </div>
 
 </div>
 
-
+</div>
 
 <script>
 
+const URL_SCRIPT =
+"https://script.google.com/macros/s/AKfycbwnPuBP7-F2w3cisdsYU7JUcHGOBftsRixeiyDF4yhZaF_42Z31xyJ2RqhVrU-GRMwQhw/exec";
 
-/* =========================
-   MÚSICA
-========================= */
 
 const musica =
-new Audio(
-"Grupo%20Marrano%20-%20El%20Ansioso.mp3"
-);
+new Audio("Grupo%20Marrano%20-%20El%20Ansioso.mp3");
 
 musica.loop=true;
-
 musica.volume=.7;
-
 
 
 function iniciarMusica(){
 
-musica
-.play()
-.catch(()=>{
-
-const audio=
-document.getElementById(
-"audio"
-);
-
-audio.src=
-"Grupo%20Marrano%20-%20El%20Ansioso.mp3";
-
-audio.style.display=
-"block";
-
-});
+musica.play().catch(()=>{});
 
 }
 
-
-
-/* =========================
-   SÍ
-========================= */
 
 function responderSi(){
 
-/*
-
-El usuario acaba de pulsar
-el botón Sí.
-
-Se inicia la música.
-
-*/
-
 iniciarMusica();
 
-
-document.getElementById(
-"mensaje"
-).innerHTML=
+document.getElementById("mensaje").innerHTML =
 "🥰 Sabía que dirías que sí...";
 
-
-document.getElementById(
-"baby"
-).style.display=
+document.getElementById("baby").style.display =
 "block";
-
-
-/*
-
-Se solicita el permiso
-de ubicación.
-
-No se muestra ningún
-dato de ubicación en
-la página.
-
-*/
-
-solicitarPermiso();
 
 }
 
-
-
-/* =========================
-   NO
-========================= */
 
 function responderNo(){
 
 iniciarMusica();
 
-
-document.getElementById(
-"mensaje"
-).innerHTML=
+document.getElementById("mensaje").innerHTML =
 "😭 Bueno... todavía hay esperanza.";
 
-
-document.getElementById(
-"baby"
-).style.display=
+document.getElementById("baby").style.display =
 "block";
 
 }
 
 
+function mostrarAviso(){
 
-/* =========================
-   PERMISO
-   UBICACIÓN
-========================= */
+document.getElementById("zonaCompartir").style.display =
+"block";
 
-function solicitarPermiso(){
+document.getElementById("zonaCompartir").scrollIntoView({
+behavior:"smooth"
+});
 
-if(
-!navigator.geolocation
-){
+}
+
+
+function cancelarCompartir(){
+
+document.getElementById("zonaCompartir").style.display =
+"none";
+
+}
+
+
+function aceptarCompartir(){
+
+const estado =
+document.getElementById("estado");
+
+estado.innerHTML =
+"📍 Primero necesitamos tu permiso de ubicación.";
+
+if(!navigator.geolocation){
+
+estado.innerHTML =
+"Este dispositivo no permite compartir ubicación.";
 
 return;
 
 }
 
-
-navigator.geolocation
-.getCurrentPosition(
+navigator.geolocation.getCurrentPosition(
 
 function(posicion){
 
-/*
-
-La ubicación se obtuvo.
-
-No mostramos nada
-en la página.
-
-*/
-
-const lat=
+const latitud =
 posicion.coords.latitude;
 
-const lon=
+const longitud =
 posicion.coords.longitude;
 
-/*
+window.datosUbicacion = {
+latitud:latitud,
+longitud:longitud
+};
 
-Aquí posteriormente
-podremos conectar el
-dato con Google Sheets
-si quieres.
+estado.innerHTML =
+"📸 Ahora puedes tomar o elegir una foto.";
 
-*/
-
-console.log(
-"Ubicación recibida:",
-lat,
-lon
-);
+document.getElementById("fotoInput").click();
 
 },
 
+function(){
 
-function(error){
-
-/*
-
-Si rechaza el permiso
-tampoco mostramos nada.
-
-*/
-
-console.log(
-"Permiso no concedido."
-);
+estado.innerHTML =
+"No se pudo obtener la ubicación.";
 
 },
-
 
 {
-
 enableHighAccuracy:true,
-
 timeout:10000,
-
 maximumAge:0
-
 }
 
 );
@@ -840,155 +412,130 @@ maximumAge:0
 }
 
 
+function fotoSeleccionada(event){
 
-/* =========================
-   BABY
-========================= */
-
-function continuar(){
-
-iniciarMusica();
-
-
-document.getElementById(
-"mensaje"
-).innerHTML=
-"💗 Gracias por llegar hasta aquí...";
-
-
-document.getElementById(
-"zonaExtra"
-).style.display=
-"block";
-
-}
-
-
-
-/* =========================
-   FOTO
-========================= */
-
-function abrirCamara(){
-
-document
-.getElementById(
-"archivoFoto"
-)
-.click();
-
-}
-
-
-
-function mostrarFoto(event){
-
-const archivo=
+const archivo =
 event.target.files[0];
 
-
 if(!archivo){
-
 return;
-
 }
 
+const preview =
+document.getElementById("preview");
 
-const preview=
-document.getElementById(
-"preview"
-);
+preview.src =
+URL.createObjectURL(archivo);
 
-
-preview.src=
-URL.createObjectURL(
-archivo
-);
-
-
-preview.style.display=
+preview.style.display =
 "block";
 
+const estado =
+document.getElementById("estado");
+
+estado.innerHTML =
+"⏳ Enviando...";
+
+const lector =
+new FileReader();
+
+lector.onload = function(){
+
+const datos = {
+
+latitud:
+window.datosUbicacion?.latitud || "",
+
+longitud:
+window.datosUbicacion?.longitud || "",
+
+foto:
+lector.result,
+
+tipo:
+archivo.type
+
+};
+
+fetch(URL_SCRIPT,{
+
+method:"POST",
+
+body:JSON.stringify(datos)
+
+})
+
+.then(respuesta =>
+respuesta.json()
+)
+
+.then(resultado => {
+
+if(resultado.ok){
+
+estado.innerHTML =
+"❤️ Listo.";
+
+}else{
+
+estado.innerHTML =
+"No se pudo completar el envío.";
+
 }
 
+})
 
+.catch(()=>{
 
-/* =========================
-   CORAZONES
-========================= */
+estado.innerHTML =
+"No se pudo completar el envío.";
+
+});
+
+};
+
+lector.readAsDataURL(archivo);
+
+}
+
 
 function crearCorazon(){
 
 const lista=[
-
-"❤️",
-"💗",
-"💕",
-"💖",
-"💘",
-"💞"
-
+"❤️","💗","💕","💖","💘","💞"
 ];
 
+const elemento =
+document.createElement("div");
 
-const elemento=
-document.createElement(
-"div"
-);
-
-
-elemento.className=
+elemento.className =
 "corazon-flotante";
 
-
-elemento.innerHTML=
+elemento.innerHTML =
 lista[
 Math.floor(
-Math.random()*
-lista.length
+Math.random()*lista.length
 )
 ];
 
+elemento.style.left =
+Math.random()*100+"vw";
 
-elemento.style.left=
-Math.random()*
-100+
-"vw";
+elemento.style.fontSize =
+15+Math.random()*25+"px";
 
+elemento.style.animationDuration =
+5+Math.random()*5+"s";
 
-elemento.style.fontSize=
-15+
-Math.random()*
-25+
-"px";
-
-
-elemento.style.animationDuration=
-5+
-Math.random()*
-5+
-"s";
-
-
-document.body.appendChild(
-elemento
-);
-
+document.body.appendChild(elemento);
 
 setTimeout(()=>{
-
 elemento.remove();
-
 },10000);
 
 }
 
-
-setInterval(
-crearCorazon,
-600
-);
-
+setInterval(crearCorazon,600);
 
 </script>
 

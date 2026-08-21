@@ -3,108 +3,424 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff4f81">
+
   <title>Baby ❤️</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: white;
+
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: Arial, sans-serif;
-      color: white;
-      background: linear-gradient(135deg, #ff4f81, #9b5de5);
+
+      background:
+        radial-gradient(circle at 20% 20%, #ff8fab 0%, transparent 35%),
+        radial-gradient(circle at 80% 80%, #8b5cf6 0%, transparent 35%),
+        linear-gradient(135deg, #ff477e, #8b5cf6);
+
+      background-size: 180% 180%;
+      animation: fondo 12s ease infinite;
     }
 
-    .card {
-      width: 90%;
-      max-width: 400px;
+    @keyframes fondo {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .contenedor {
+      width: 92%;
+      max-width: 410px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .tarjeta {
       padding: 35px 25px;
       text-align: center;
-      background: rgba(255,255,255,.18);
-      border-radius: 30px;
-      box-shadow: 0 20px 50px rgba(0,0,0,.25);
+
+      background: rgba(255,255,255,.15);
+
+      border: 1px solid rgba(255,255,255,.3);
+
+      border-radius: 32px;
+
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+
+      box-shadow:
+        0 25px 70px rgba(0,0,0,.25),
+        inset 0 1px 1px rgba(255,255,255,.25);
+
+      animation: entrada .8s ease;
+    }
+
+    @keyframes entrada {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .corazon-principal {
+      font-size: 70px;
+      display: inline-block;
+
+      filter: drop-shadow(0 8px 15px rgba(0,0,0,.2));
+
+      animation: latido 1.4s infinite;
+    }
+
+    @keyframes latido {
+      0%,100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
     }
 
     h1 {
-      font-size: 36px;
+      margin: 15px 0 8px;
+      font-size: 38px;
+      font-weight: 800;
+    }
+
+    .descripcion {
+      margin: 0 0 25px;
+      opacity: .9;
+      font-size: 16px;
+    }
+
+    .botones {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     button {
       width: 100%;
-      padding: 16px;
-      margin-top: 12px;
       border: none;
+      padding: 16px;
+
       border-radius: 20px;
+
       font-size: 18px;
-      font-weight: bold;
+      font-weight: 700;
+
       cursor: pointer;
+
+      transition:
+        transform .2s,
+        box-shadow .2s;
+    }
+
+    button:active {
+      transform: scale(.95);
     }
 
     .si {
+      color: #ff477e;
       background: white;
-      color: #ff4f81;
+
+      box-shadow:
+        0 8px 25px rgba(255,255,255,.25);
     }
 
     .no {
-      background: rgba(0,0,0,.2);
       color: white;
+      background: rgba(0,0,0,.18);
+
+      border: 1px solid rgba(255,255,255,.15);
     }
 
-    #baby {
+    .baby {
       display: none;
-      background: #ff4f81;
+
+      margin-top: 20px;
+
       color: white;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ff477e,
+          #ff6fa0,
+          #a855f7
+        );
+
+      box-shadow:
+        0 10px 30px rgba(255,71,126,.35);
+    }
+
+    #mensaje {
+      margin-top: 20px;
+      min-height: 24px;
+
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    /* CORAZONES */
+
+    .corazon-flotante {
+      position: fixed;
+
+      bottom: -40px;
+
+      pointer-events: none;
+
+      z-index: 1;
+
+      animation:
+        subir linear forwards;
+
+      opacity: .8;
+    }
+
+    @keyframes subir {
+
+      0% {
+        transform:
+          translateY(0)
+          rotate(0deg)
+          scale(.8);
+
+        opacity: 0;
+      }
+
+      15% {
+        opacity: .9;
+      }
+
+      100% {
+        transform:
+          translateY(-115vh)
+          rotate(360deg)
+          scale(1.2);
+
+        opacity: 0;
+      }
+    }
+
+    /* BRILLOS */
+
+    .brillo {
+      position: fixed;
+
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+
+      background: white;
+
+      box-shadow:
+        0 0 10px white,
+        0 0 20px white;
+
+      opacity: .6;
+
+      animation:
+        aparecer 3s ease-in-out infinite;
+
+      pointer-events: none;
+    }
+
+    @keyframes aparecer {
+
+      0%,100% {
+        opacity: 0;
+        transform: scale(.5);
+      }
+
+      50% {
+        opacity: .9;
+        transform: scale(1.5);
+      }
+    }
+
+    @media (max-width: 380px) {
+
+      .tarjeta {
+        padding: 28px 20px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .corazon-principal {
+        font-size: 60px;
+      }
+
     }
   </style>
 </head>
 
 <body>
 
-  <div class="card">
+  <!-- BRILLOS -->
 
-    <div style="font-size:60px;">❤️</div>
+  <div class="brillo" style="top:12%;left:18%;"></div>
+  <div class="brillo" style="top:25%;left:80%;animation-delay:1s;"></div>
+  <div class="brillo" style="top:70%;left:15%;animation-delay:2s;"></div>
+  <div class="brillo" style="top:82%;left:75%;animation-delay:.5s;"></div>
 
-    <h1>¿Me quieres?</h1>
+  <div class="contenedor">
 
-    <p>Solo tengo una pregunta para ti...</p>
+    <div class="tarjeta">
 
-    <button class="si" onclick="responder('Sí ❤️')">
-      Sí ❤️
-    </button>
+      <div class="corazon-principal">
+        ❤️
+      </div>
 
-    <button class="no" onclick="responder('No 😭')">
-      No 😭
-    </button>
+      <h1>
+        ¿Me quieres?
+      </h1>
 
-    <button id="baby" onclick="baby()">
-      Baby ❤️
-    </button>
+      <p class="descripcion">
+        Solo tengo una pequeña pregunta para ti...
+      </p>
 
-    <p id="mensaje"></p>
+      <div class="botones">
+
+        <button
+          class="si"
+          onclick="responder(true)">
+          Sí ❤️
+        </button>
+
+        <button
+          class="no"
+          onclick="responder(false)">
+          No 😭
+        </button>
+
+      </div>
+
+      <button
+        id="baby"
+        class="baby"
+        onclick="continuar()">
+        Baby ❤️
+      </button>
+
+      <div id="mensaje"></div>
+
+    </div>
 
   </div>
 
-  <script>
+<script>
 
-    function responder(respuesta) {
+function responder(acepto) {
 
-      document.getElementById("mensaje").innerHTML =
-        respuesta;
+  const mensaje =
+    document.getElementById("mensaje");
 
-      document.getElementById("baby").style.display =
-        "block";
-    }
+  const baby =
+    document.getElementById("baby");
 
-    function baby() {
+  if (acepto) {
 
-      document.getElementById("mensaje").innerHTML =
-        "🥰 Continuemos... ❤️";
+    mensaje.innerHTML =
+      "🥰 Sabía que dirías que sí...";
 
-    }
+  } else {
 
-  </script>
+    mensaje.innerHTML =
+      "😭 Bueno... todavía hay esperanza.";
+
+  }
+
+  baby.style.display = "block";
+
+}
+
+
+/* BOTÓN BABY */
+
+function continuar() {
+
+  document.getElementById("mensaje").innerHTML =
+    "💗 Gracias por llegar hasta aquí...";
+
+}
+
+
+/* CORAZONES */
+
+function crearCorazon() {
+
+  const corazones = [
+    "❤️",
+    "💗",
+    "💕",
+    "💖",
+    "💘",
+    "💞"
+  ];
+
+  const elemento =
+    document.createElement("div");
+
+  elemento.className =
+    "corazon-flotante";
+
+  elemento.innerHTML =
+    corazones[
+      Math.floor(
+        Math.random() * corazones.length
+      )
+    ];
+
+  elemento.style.left =
+    Math.random() * 100 + "vw";
+
+  elemento.style.fontSize =
+    (15 + Math.random() * 25) + "px";
+
+  elemento.style.animationDuration =
+    (5 + Math.random() * 5) + "s";
+
+  document.body.appendChild(elemento);
+
+  setTimeout(() => {
+
+    elemento.remove();
+
+  }, 10000);
+
+}
+
+setInterval(crearCorazon, 600);
+
+</script>
 
 </body>
 </html>

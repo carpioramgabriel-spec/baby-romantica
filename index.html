@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baby ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: linear-gradient(135deg, #ff4f81, #9b5de5, #5a67d8);
+      background-size: 300% 300%;
+      animation: fondo 10s ease infinite;
+    }
+
+    @keyframes fondo {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      width: 90%;
+      max-width: 400px;
+      padding: 35px 25px;
+      text-align: center;
+      background: rgba(255,255,255,.16);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,.3);
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+    }
+
+    .corazon {
+      font-size: 65px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 15px 0;
+    }
+
+    p {
+      opacity: .9;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      margin-top: 12px;
+      border: none;
+      border-radius: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .si {
+      background: white;
+      color: #ff4f81;
+    }
+
+    .no {
+      background: rgba(0,0,0,.2);
+      color: white;
+    }
+
+    .baby {
+      background: linear-gradient(90deg,#ff4f81,#ff77a8);
+      color: white;
+      font-size: 22px;
+    }
+
+    .oculto {
+      display: none;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="corazon">❤️</div>
+
+    <h1>¿Me quieres?</h1>
+
+    <p>Solo tengo una pregunta para ti...</p>
+
+    <div id="pregunta">
+
+      <button class="si" onclick="responder('Sí ❤️')">
+        Sí ❤️
+      </button>
+
+      <button class="no" onclick="responder('No 😭')">
+        No 😭
+      </button>
+
+    </div>
+
+    <div id="siguiente" class="oculto">
+
+      <p id="mensaje"></p>
+
+      <button class="baby" onclick="continuar()">
+        Baby ❤️
+      </button>
+
+    </div>
+
+    <div id="resultado"></div>
+
+  </div>
+
+<script>
+
+function responder(respuesta) {
+
+  document.getElementById("pregunta")
+    .classList.add("oculto");
+
+  document.getElementById("siguiente")
+    .classList.remove("oculto");
+
+  document.getElementById("mensaje").innerHTML =
+    respuesta === "Sí ❤️"
+      ? "🥰 Sabía que dirías que sí..."
+      : "😭 Bueno...";
+
+}
+
+function continuar() {
+
+  document.getElementById("resultado").innerHTML =
+    "❤️ Continuemos...";
+
+}
+
+</script>
+
+</body>
+</html>

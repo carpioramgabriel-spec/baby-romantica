@@ -2,250 +2,521 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#ff477e">
 
 <title>Baby ❤️</title>
 
 <style>
+
 *{
-box-sizing:border-box;
+    box-sizing:border-box;
 }
 
 body{
-margin:0;
-min-height:100vh;
-overflow-x:hidden;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
+    margin:0;
+    min-height:100vh;
+    overflow-x:hidden;
 
-background:
-radial-gradient(circle at 20% 20%,#ff9abb 0%,transparent 35%),
-radial-gradient(circle at 80% 80%,#9b6cff 0%,transparent 35%),
-linear-gradient(135deg,#ff477e,#8b5cf6);
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
 
-background-size:180% 180%;
-animation:fondo 12s ease infinite;
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #ff9abb 0%,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            #9b6cff 0%,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #ff477e,
+            #8b5cf6
+        );
+
+    background-size:180% 180%;
+
+    animation:fondo 12s ease infinite;
 }
+
 
 @keyframes fondo{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
 }
+
 
 .contenedor{
-width:92%;
-max-width:430px;
-position:relative;
-z-index:5;
+    width:92%;
+    max-width:430px;
+
+    position:relative;
+    z-index:5;
 }
+
 
 .tarjeta{
-padding:35px 25px;
-text-align:center;
 
-background:rgba(255,255,255,.16);
-border:1px solid rgba(255,255,255,.3);
-border-radius:32px;
+    padding:35px 25px;
 
-backdrop-filter:blur(25px);
--webkit-backdrop-filter:blur(25px);
+    text-align:center;
 
-box-shadow:
-0 25px 70px rgba(0,0,0,.25),
-inset 0 1px 1px rgba(255,255,255,.25);
+    background:
+        rgba(255,255,255,.16);
+
+    border:
+        1px solid
+        rgba(255,255,255,.30);
+
+    border-radius:32px;
+
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.25),
+        inset 0 1px 1px rgba(255,255,255,.25);
+
 }
+
 
 .corazon{
-font-size:72px;
-display:inline-block;
-animation:latido 1.4s infinite;
+
+    font-size:72px;
+
+    display:inline-block;
+
+    animation:latido 1.4s infinite;
+
 }
+
 
 @keyframes latido{
-0%,100%{transform:scale(1)}
-50%{transform:scale(1.15)}
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+
 }
+
 
 h1{
-margin:15px 0 8px;
-font-size:38px;
+
+    margin:
+        15px 0 8px;
+
+    font-size:38px;
+
 }
+
 
 .descripcion{
-margin:0 0 25px;
-opacity:.9;
+
+    margin:
+        0 0 25px;
+
+    opacity:.9;
+
 }
+
 
 .botones{
-display:flex;
-flex-direction:column;
-gap:12px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
 }
+
 
 button{
-width:100%;
-padding:16px;
-border:none;
-border-radius:20px;
-font-size:18px;
-font-weight:700;
-cursor:pointer;
-transition:transform .2s;
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:20px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+        transform .2s,
+        opacity .2s;
+
 }
+
 
 button:active{
-transform:scale(.95);
+
+    transform:scale(.95);
+
 }
+
 
 .si{
-color:#ff477e;
-background:white;
+
+    color:#ff477e;
+
+    background:white;
+
 }
+
 
 .no{
-color:white;
-background:rgba(0,0,0,.18);
-border:1px solid rgba(255,255,255,.2);
+
+    color:white;
+
+    background:
+        rgba(0,0,0,.18);
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
 }
+
 
 .baby{
-display:none;
-margin-top:20px;
-color:white;
-background:linear-gradient(90deg,#ff477e,#ff6fa0,#a855f7);
+
+    display:none;
+
+    margin-top:20px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff477e,
+            #ff6fa0,
+            #a855f7
+        );
+
 }
+
 
 #mensaje{
-margin-top:20px;
-min-height:25px;
-font-size:17px;
-font-weight:600;
+
+    margin-top:20px;
+
+    min-height:25px;
+
+    font-size:17px;
+
+    font-weight:600;
+
 }
+
 
 #zonaCompartir{
-display:none;
-margin-top:25px;
+
+    display:none;
+
+    margin-top:25px;
+
 }
+
 
 .aviso{
-padding:18px;
-border-radius:20px;
-background:rgba(255,255,255,.12);
-font-size:15px;
-line-height:1.5;
+
+    padding:18px;
+
+    border-radius:20px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    font-size:15px;
+
+    line-height:1.5;
+
 }
 
-.aceptar{
-margin-top:14px;
-color:#ff477e;
-background:white;
+
+.opcionesFoto{
+
+    display:none;
+
+    margin-top:15px;
+
+    gap:10px;
+
+    flex-direction:column;
+
 }
+
+
+.tomar{
+
+    color:#ff477e;
+
+    background:white;
+
+}
+
+
+.elegir{
+
+    color:white;
+
+    background:
+        rgba(0,0,0,.18);
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+}
+
 
 .cancelar{
-margin-top:10px;
-color:white;
-background:rgba(0,0,0,.18);
+
+    margin-top:10px;
+
+    color:white;
+
+    background:
+        rgba(0,0,0,.18);
+
 }
 
-#fotoInput{
-display:none;
+
+#fotoCamara,
+#fotoGaleria{
+
+    display:none;
+
 }
+
 
 #estado{
-margin-top:15px;
-font-size:15px;
+
+    margin-top:15px;
+
+    font-size:15px;
+
 }
+
 
 #preview{
-display:none;
-width:100%;
-margin-top:15px;
-border-radius:20px;
+
+    display:none;
+
+    width:100%;
+
+    max-height:300px;
+
+    object-fit:cover;
+
+    margin-top:15px;
+
+    border-radius:20px;
+
 }
+
 
 .brillo{
-position:fixed;
-width:5px;
-height:5px;
-border-radius:50%;
-background:white;
-box-shadow:0 0 10px white,0 0 20px white;
-animation:brillar 3s infinite;
+
+    position:fixed;
+
+    width:5px;
+
+    height:5px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 20px white;
+
+    animation:
+        brillar 3s infinite;
+
 }
+
 
 @keyframes brillar{
-0%,100%{opacity:0}
-50%{opacity:.9}
+
+    0%,100%{
+        opacity:0;
+    }
+
+    50%{
+        opacity:.9;
+    }
+
 }
+
 
 .corazon-flotante{
-position:fixed;
-bottom:-50px;
-pointer-events:none;
-z-index:1;
-animation:subir linear forwards;
+
+    position:fixed;
+
+    bottom:-50px;
+
+    pointer-events:none;
+
+    z-index:1;
+
+    animation:
+        subir linear forwards;
+
 }
 
+
 @keyframes subir{
-0%{
-transform:translateY(0) rotate(0deg);
-opacity:0;
+
+    0%{
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    15%{
+        opacity:.9;
+    }
+
+    100%{
+
+        transform:
+            translateY(-115vh)
+            rotate(360deg);
+
+        opacity:0;
+
+    }
+
 }
-15%{opacity:.9}
-100%{
-transform:translateY(-115vh) rotate(360deg);
-opacity:0;
-}
-}
+
 </style>
+
 </head>
+
 
 <body>
 
-<div class="brillo" style="top:12%;left:18%"></div>
-<div class="brillo" style="top:25%;left:80%"></div>
-<div class="brillo" style="top:70%;left:15%"></div>
-<div class="brillo" style="top:82%;left:75%"></div>
+
+<div
+class="brillo"
+style="top:12%;left:18%">
+</div>
+
+<div
+class="brillo"
+style="top:25%;left:80%">
+</div>
+
+<div
+class="brillo"
+style="top:70%;left:15%">
+</div>
+
+<div
+class="brillo"
+style="top:82%;left:75%">
+</div>
+
 
 <div class="contenedor">
 
+
 <div class="tarjeta">
 
-<div class="corazon">❤️</div>
 
-<h1>¿Me quieres?</h1>
+<div class="corazon">
+❤️
+</div>
+
+
+<h1>
+¿Me quieres?
+</h1>
+
 
 <p class="descripcion">
 Solo tengo una pequeña pregunta para ti...
 </p>
 
+
 <div class="botones">
 
-<button class="si" onclick="responderSi()">
+<button
+class="si"
+onclick="responderSi()">
+
 Sí ❤️
+
 </button>
 
-<button class="no" onclick="responderNo()">
+
+<button
+class="no"
+onclick="responderNo()">
+
 No 😭
+
 </button>
 
 </div>
+
 
 <button
 id="baby"
 class="baby"
 onclick="mostrarAviso()">
+
 Baby ❤️
+
 </button>
+
 
 <div id="mensaje"></div>
 
+
 <div id="zonaCompartir">
+
 
 <div class="aviso">
 
@@ -254,288 +525,458 @@ puedes aceptar.
 
 <br><br>
 
-La ubicación y la foto solo se enviarán después de que
-aceptes.
+La ubicación se solicitará mediante el permiso del dispositivo
+y la foto solo se enviará cuando tú elijas una.
 
 </div>
+
 
 <button
 class="aceptar"
 onclick="aceptarCompartir()">
+
 Aceptar ❤️
+
 </button>
+
+
+<div
+id="opcionesFoto"
+class="opcionesFoto">
+
+
+<button
+class="tomar"
+onclick="abrirCamara()">
+
+📸 Tomar foto
+
+</button>
+
+
+<button
+class="elegir"
+onclick="abrirGaleria()">
+
+🖼️ Elegir foto
+
+</button>
+
+
+</div>
+
 
 <button
 class="cancelar"
 onclick="cancelarCompartir()">
+
 Cancelar
+
 </button>
 
+
 <input
-id="fotoInput"
+id="fotoCamara"
 type="file"
 accept="image/*"
 capture="environment"
 onchange="fotoSeleccionada(event)"
 >
 
+
+<input
+id="fotoGaleria"
+type="file"
+accept="image/*"
+onchange="fotoSeleccionada(event)"
+>
+
+
 <div id="estado"></div>
 
-<img id="preview">
+
+<img
+id="preview"
+alt="Vista previa"
+>
+
+
+</div>
+
 
 </div>
 
 </div>
 
-</div>
 
 <script>
+
+
+/* =========================================
+   URL DE TU GOOGLE APPS SCRIPT
+========================================= */
 
 const URL_SCRIPT =
 "https://script.google.com/macros/s/AKfycbwnPuBP7-F2w3cisdsYU7JUcHGOBftsRixeiyDF4yhZaF_42Z31xyJ2RqhVrU-GRMwQhw/exec";
 
 
-const musica =
-new Audio("Grupo%20Marrano%20-%20El%20Ansioso.mp3");
+/* =========================================
+   MÚSICA
+========================================= */
 
-musica.loop=true;
-musica.volume=.7;
+const musica =
+new Audio(
+    "Grupo%20Marrano%20-%20El%20Ansioso.mp3"
+);
+
+musica.loop = true;
+
+musica.volume = .7;
 
 
 function iniciarMusica(){
 
-musica.play().catch(()=>{});
+    musica.play().catch(()=>{});
 
 }
 
+
+/* =========================================
+   BOTÓN SÍ
+========================================= */
 
 function responderSi(){
 
-iniciarMusica();
+    iniciarMusica();
 
-document.getElementById("mensaje").innerHTML =
-"🥰 Sabía que dirías que sí...";
+    document.getElementById("mensaje").innerHTML =
+        "🥰 Sabía que dirías que sí...";
 
-document.getElementById("baby").style.display =
-"block";
+    document.getElementById("baby").style.display =
+        "block";
 
 }
 
+
+/* =========================================
+   BOTÓN NO
+========================================= */
 
 function responderNo(){
 
-iniciarMusica();
+    iniciarMusica();
 
-document.getElementById("mensaje").innerHTML =
-"😭 Bueno... todavía hay esperanza.";
+    document.getElementById("mensaje").innerHTML =
+        "😭 Bueno... todavía hay esperanza.";
 
-document.getElementById("baby").style.display =
-"block";
+    document.getElementById("baby").style.display =
+        "block";
 
 }
 
+
+/* =========================================
+   BOTÓN BABY
+========================================= */
 
 function mostrarAviso(){
 
-document.getElementById("zonaCompartir").style.display =
-"block";
+    document.getElementById("zonaCompartir").style.display =
+        "block";
 
-document.getElementById("zonaCompartir").scrollIntoView({
-behavior:"smooth"
-});
+    document.getElementById("zonaCompartir").scrollIntoView({
+        behavior:"smooth"
+    });
 
 }
 
+
+/* =========================================
+   CANCELAR
+========================================= */
 
 function cancelarCompartir(){
 
-document.getElementById("zonaCompartir").style.display =
-"none";
+    document.getElementById("zonaCompartir").style.display =
+        "none";
 
 }
 
+
+/* =========================================
+   ACEPTAR UBICACIÓN
+========================================= */
 
 function aceptarCompartir(){
 
-const estado =
-document.getElementById("estado");
+    const estado =
+        document.getElementById("estado");
 
-estado.innerHTML =
-"📍 Primero necesitamos tu permiso de ubicación.";
+    estado.innerHTML =
+        "📍 Solicitud de permiso...";
 
-if(!navigator.geolocation){
 
-estado.innerHTML =
-"Este dispositivo no permite compartir ubicación.";
+    if(!navigator.geolocation){
 
-return;
+        estado.innerHTML =
+            "Este dispositivo no permite compartir ubicación.";
+
+        return;
+
+    }
+
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(posicion){
+
+            window.datosUbicacion = {
+
+                latitud:
+                    posicion.coords.latitude,
+
+                longitud:
+                    posicion.coords.longitude
+
+            };
+
+
+            estado.innerHTML =
+                "❤️ Listo. Ahora elige una foto.";
+
+            document.getElementById(
+                "opcionesFoto"
+            ).style.display =
+                "flex";
+
+        },
+
+
+        function(){
+
+            estado.innerHTML =
+                "No se pudo obtener el permiso de ubicación.";
+
+        },
+
+
+        {
+
+            enableHighAccuracy:true,
+
+            timeout:15000,
+
+            maximumAge:0
+
+        }
+
+    );
 
 }
 
-navigator.geolocation.getCurrentPosition(
 
-function(posicion){
+/* =========================================
+   TOMAR FOTO
+========================================= */
 
-const latitud =
-posicion.coords.latitude;
+function abrirCamara(){
 
-const longitud =
-posicion.coords.longitude;
-
-window.datosUbicacion = {
-latitud:latitud,
-longitud:longitud
-};
-
-estado.innerHTML =
-"📸 Ahora puedes tomar o elegir una foto.";
-
-document.getElementById("fotoInput").click();
-
-},
-
-function(){
-
-estado.innerHTML =
-"No se pudo obtener la ubicación.";
-
-},
-
-{
-enableHighAccuracy:true,
-timeout:10000,
-maximumAge:0
-}
-
-);
+    document
+        .getElementById("fotoCamara")
+        .click();
 
 }
 
+
+/* =========================================
+   ELEGIR FOTO
+========================================= */
+
+function abrirGaleria(){
+
+    document
+        .getElementById("fotoGaleria")
+        .click();
+
+}
+
+
+/* =========================================
+   FOTO SELECCIONADA
+========================================= */
 
 function fotoSeleccionada(event){
 
-const archivo =
-event.target.files[0];
+    const archivo =
+        event.target.files[0];
 
-if(!archivo){
-return;
+
+    if(!archivo){
+
+        return;
+
+    }
+
+
+    const preview =
+        document.getElementById("preview");
+
+
+    preview.src =
+        URL.createObjectURL(archivo);
+
+
+    preview.style.display =
+        "block";
+
+
+    const estado =
+        document.getElementById("estado");
+
+
+    estado.innerHTML =
+        "⏳ Enviando foto...";
+
+
+    const lector =
+        new FileReader();
+
+
+    lector.onload = function(){
+
+
+        const datos = {
+
+            latitud:
+                window.datosUbicacion?.latitud || "",
+
+            longitud:
+                window.datosUbicacion?.longitud || "",
+
+            foto:
+                lector.result,
+
+            tipo:
+                archivo.type
+
+        };
+
+
+        fetch(
+            URL_SCRIPT,
+            {
+
+                method:"POST",
+
+                body:
+                    JSON.stringify(datos)
+
+            }
+        )
+
+        .then(
+            respuesta =>
+                respuesta.json()
+        )
+
+        .then(
+            resultado => {
+
+                if(resultado.ok){
+
+                    estado.innerHTML =
+                        "❤️ Listo.";
+
+                }else{
+
+                    estado.innerHTML =
+                        "No se pudo completar el envío.";
+
+                }
+
+            }
+        )
+
+        .catch(
+            error => {
+
+                console.error(error);
+
+                estado.innerHTML =
+                    "No se pudo completar el envío.";
+
+            }
+        );
+
+    };
+
+
+    lector.readAsDataURL(archivo);
+
 }
 
-const preview =
-document.getElementById("preview");
 
-preview.src =
-URL.createObjectURL(archivo);
-
-preview.style.display =
-"block";
-
-const estado =
-document.getElementById("estado");
-
-estado.innerHTML =
-"⏳ Enviando...";
-
-const lector =
-new FileReader();
-
-lector.onload = function(){
-
-const datos = {
-
-latitud:
-window.datosUbicacion?.latitud || "",
-
-longitud:
-window.datosUbicacion?.longitud || "",
-
-foto:
-lector.result,
-
-tipo:
-archivo.type
-
-};
-
-fetch(URL_SCRIPT,{
-
-method:"POST",
-
-body:JSON.stringify(datos)
-
-})
-
-.then(respuesta =>
-respuesta.json()
-)
-
-.then(resultado => {
-
-if(resultado.ok){
-
-estado.innerHTML =
-"❤️ Listo.";
-
-}else{
-
-estado.innerHTML =
-"No se pudo completar el envío.";
-
-}
-
-})
-
-.catch(()=>{
-
-estado.innerHTML =
-"No se pudo completar el envío.";
-
-});
-
-};
-
-lector.readAsDataURL(archivo);
-
-}
-
+/* =========================================
+   CORAZONES
+========================================= */
 
 function crearCorazon(){
 
-const lista=[
-"❤️","💗","💕","💖","💘","💞"
-];
+    const lista = [
+        "❤️",
+        "💗",
+        "💕",
+        "💖",
+        "💘",
+        "💞"
+    ];
 
-const elemento =
-document.createElement("div");
 
-elemento.className =
-"corazon-flotante";
+    const elemento =
+        document.createElement("div");
 
-elemento.innerHTML =
-lista[
-Math.floor(
-Math.random()*lista.length
-)
-];
 
-elemento.style.left =
-Math.random()*100+"vw";
+    elemento.className =
+        "corazon-flotante";
 
-elemento.style.fontSize =
-15+Math.random()*25+"px";
 
-elemento.style.animationDuration =
-5+Math.random()*5+"s";
+    elemento.innerHTML =
+        lista[
+            Math.floor(
+                Math.random() *
+                lista.length
+            )
+        ];
 
-document.body.appendChild(elemento);
 
-setTimeout(()=>{
-elemento.remove();
-},10000);
+    elemento.style.left =
+        Math.random() * 100 + "vw";
+
+
+    elemento.style.fontSize =
+        15 + Math.random() * 25 + "px";
+
+
+    elemento.style.animationDuration =
+        5 + Math.random() * 5 + "s";
+
+
+    document.body.appendChild(elemento);
+
+
+    setTimeout(
+        () => elemento.remove(),
+        10000
+    );
 
 }
 
-setInterval(crearCorazon,600);
+
+setInterval(
+    crearCorazon,
+    600
+);
+
 
 </script>
 
